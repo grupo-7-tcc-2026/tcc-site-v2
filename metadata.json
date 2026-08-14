@@ -1,0 +1,6 @@
+{
+  "name": "Previsão de Alagamentos SP",
+  "description": "Painel climático inteligente com monitoramento de risco de alagamento por distritos de São Paulo utilizando Inteligência Artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
