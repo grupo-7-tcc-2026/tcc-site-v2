@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import DistrictSelector from "./components/DistrictSelector";
 import RiskWidget from "./components/RiskWidget";
 import PrecipitationChart from "./components/PrecipitationChart";
+import { SP_DISTRICTS } from "./districtsData";
 import { ClimatePrevisao } from "./types";
 import { 
   CloudRain, 
@@ -24,6 +25,12 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState("");
 
+  useEffect(() => {
+    if (!selectedDistrict && SP_DISTRICTS.length > 0) {
+      setSelectedDistrict(SP_DISTRICTS[0].nome);
+    }
+  }, [selectedDistrict]);
+
   // Keep a digital clock ticking to represent real-time stream status
   useEffect(() => {
     const updateTime = () => {
@@ -36,6 +43,8 @@ export default function App() {
   }, []);
 
   const fetchPrevisao = async (distrito: string) => {
+    if (!distrito) return;
+
     setLoading(true);
     setError(null);
     try {
@@ -56,11 +65,16 @@ export default function App() {
 
   // Fetch forecast whenever selected district changes
   useEffect(() => {
-    fetchPrevisao(selectedDistrict);
+    if (selectedDistrict) {
+      fetchPrevisao(selectedDistrict);
+    }
   }, [selectedDistrict]);
 
   const handleRefresh = () => {
-    fetchPrevisao(selectedDistrict);
+    const districtToFetch = selectedDistrict || SP_DISTRICTS[0]?.nome || "";
+    if (!districtToFetch) return;
+
+    fetchPrevisao(districtToFetch);
   };
 
   return (
@@ -112,6 +126,15 @@ export default function App() {
           </button>
         </div>
       </header>
+
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 pt-6">
+        <div className="bg-[#09090B] border border-white/10 rounded-2xl px-5 md:px-6 py-4 shadow-xl">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold font-mono">Distrito em monitoramento</p>
+          <h2 className="mt-2 text-2xl md:text-3xl font-light text-white tracking-tight">
+            {selectedDistrict || "Selecione um distrito"}
+          </h2>
+        </div>
+      </div>
  
       {/* CORE FRAME CONTAINER LAYOUT */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
