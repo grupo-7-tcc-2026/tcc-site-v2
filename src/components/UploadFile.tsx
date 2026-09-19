@@ -1,4 +1,4 @@
-import { DragEvent, useRef, useState } from "react";
+import { DragEvent, FormEvent, useRef, useState } from "react";
 import { Check, ImagePlus, Upload } from "lucide-react";
 
 const acceptedFileTypes = ["image/png", "image/jpeg", "image/webp"];
@@ -7,6 +7,9 @@ export default function UploadFile() {
     const inputRef = useRef<HTMLInputElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [zone, setZone] = useState("");
+    const [neighborhood, setNeighborhood] = useState("");
+    const [street, setStreet] = useState("");
 
     const selectFile = (file: File | undefined) => {
         if (file && acceptedFileTypes.includes(file.type)) {
@@ -20,63 +23,120 @@ export default function UploadFile() {
         selectFile(event.dataTransfer.files[0]);
     };
 
-    return (
-        <div
-            role="button"
-            tabIndex={0}
-            aria-label="Enviar uma foto"
-            onClick={() => inputRef.current?.click()}
-            onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    inputRef.current?.click();
-                }
-            }}
-            onDragEnter={(event) => {
-                event.preventDefault();
-                setIsDragging(true);
-            }}
-            onDragOver={(event) => event.preventDefault()}
-            onDragLeave={(event) => {
-                if (event.currentTarget === event.target) {
-                    setIsDragging(false);
-                }
-            }}
-            onDrop={handleDrop}
-            className={`group flex h-full min-h-[300px] w-full cursor-pointer flex-col items-center justify-center rounded-[15px] border transition-colors focus:outline-none focus:ring-2 focus:ring-white/40 ${
-                isDragging
-                    ? "border-white/60 bg-white/[0.06]"
-                    : "border-white/20 bg-[#191919] hover:border-white/40 hover:bg-[#1d1d1d]"
-            }`}
-        >
-            <input
-                ref={inputRef}
-                type="file"
-                accept=".png,.jpg,.jpeg,.webp"
-                className="hidden"
-                onChange={(event) => selectFile(event.target.files?.[0])}
-            />
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
 
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/20 text-[#999] transition-colors group-hover:border-white/35 group-hover:text-white">
-                {selectedFile ? <Check size={28} strokeWidth={1.5} /> : <Upload size={28} strokeWidth={1.5} />}
+    return (
+        <form onSubmit={handleSubmit} className="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(240px,1fr)]">
+            <div
+                role="button"
+                tabIndex={0}
+                aria-label="Enviar uma foto"
+                onClick={() => inputRef.current?.click()}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        inputRef.current?.click();
+                    }
+                }}
+                onDragEnter={(event) => {
+                    event.preventDefault();
+                    setIsDragging(true);
+                }}
+                onDragOver={(event) => event.preventDefault()}
+                onDragLeave={(event) => {
+                    if (event.currentTarget === event.target) {
+                        setIsDragging(false);
+                    }
+                }}
+                onDrop={handleDrop}
+                className={`group flex min-h-[420px] w-full cursor-pointer flex-col items-center justify-center rounded-[15px] border transition-colors focus:outline-none focus:ring-2 focus:ring-white/40 ${
+                    isDragging
+                        ? "border-white/60 bg-white/[0.06]"
+                        : "border-white/20 bg-[#191919] hover:border-white/40 hover:bg-[#1d1d1d]"
+                }`}
+            >
+                <input
+                    ref={inputRef}
+                    type="file"
+                    accept=".png,.jpg,.jpeg,.webp"
+                    className="hidden"
+                    onChange={(event) => selectFile(event.target.files?.[0])}
+                />
+
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/20 text-[#999] transition-colors group-hover:border-white/35 group-hover:text-white">
+                    {selectedFile ? <Check size={28} strokeWidth={1.5} /> : <Upload size={28} strokeWidth={1.5} />}
+                </div>
+
+                {selectedFile ? (
+                    <>
+                        <p className="max-w-[85%] truncate text-sm font-semibold text-white">{selectedFile.name}</p>
+                        <p className="mt-2 text-xs text-[#858585]">Clique para escolher outra foto</p>
+                    </>
+                ) : (
+                    <>
+                        <p className="text-sm font-semibold text-[#aaa] transition-colors group-hover:text-white">
+                            Clique ou arraste uma foto
+                        </p>
+                        <p className="mt-2 flex items-center gap-1.5 text-xs text-[#777]">
+                            <ImagePlus size={13} />
+                            PNG, JPG, WEBP
+                        </p>
+                    </>
+                )}
             </div>
 
-            {selectedFile ? (
-                <>
-                    <p className="max-w-[85%] truncate text-sm font-semibold text-white">{selectedFile.name}</p>
-                    <p className="mt-2 text-xs text-[#858585]">Clique para escolher outra foto</p>
-                </>
-            ) : (
-                <>
-                    <p className="text-sm font-semibold text-[#aaa] transition-colors group-hover:text-white">
-                        Clique ou arraste uma foto
-                    </p>
-                    <p className="mt-2 flex items-center gap-1.5 text-xs text-[#777]">
-                        <ImagePlus size={13} />
-                        PNG, JPG, WEBP
-                    </p>
-                </>
-            )}
-        </div>
+            <div className="rounded-[15px] border border-white/20 bg-[#191919] p-6">
+                <h2 className="text-base font-semibold text-white">Localização</h2>
+
+                <div className="mt-6 space-y-5">
+                    <label className="block">
+                        <span className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#888]">Zona</span>
+                        <select
+                            value={zone}
+                            onChange={(event) => setZone(event.target.value)}
+                            className="h-11 w-full appearance-none rounded-xl border border-white/20 bg-[#111] px-4 text-sm text-white outline-none transition-colors focus:border-white/50"
+                        >
+                            <option value="">Selecionar zona</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Norte">Zona Norte</option>
+                            <option value="Sul">Zona Sul</option>
+                            <option value="Leste">Zona Leste</option>
+                            <option value="Oeste">Zona Oeste</option>
+                        </select>
+                    </label>
+
+                    <label className="block">
+                        <span className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#888]">Bairro</span>
+                        <input
+                            type="text"
+                            value={neighborhood}
+                            onChange={(event) => setNeighborhood(event.target.value)}
+                            placeholder="Ex: Mooca"
+                            className="h-11 w-full rounded-xl border border-white/20 bg-[#111] px-4 text-sm text-white placeholder:text-[#555] outline-none transition-colors focus:border-white/50"
+                        />
+                    </label>
+
+                    <label className="block">
+                        <span className="mb-2 block text-[11px] uppercase tracking-[0.16em] text-[#888]">Rua</span>
+                        <input
+                            type="text"
+                            value={street}
+                            onChange={(event) => setStreet(event.target.value)}
+                            placeholder="Ex: Av. Paulista"
+                            className="h-11 w-full rounded-xl border border-white/20 bg-[#111] px-4 text-sm text-white placeholder:text-[#555] outline-none transition-colors focus:border-white/50"
+                        />
+                    </label>
+                </div>
+
+                <button
+                    type="submit"
+                    className="mt-8 h-12 w-full rounded-xl bg-white px-4 text-sm font-semibold text-black transition-colors hover:bg-[#e6b82e] hover:text-white"
+                >
+                    Calcular Previsão
+                </button>
+            </div>
+        </form>
     );
 }
