@@ -3,7 +3,11 @@ import DistrictSelector from "./components/DistrictSelector";
 import RiskWidget from "./components/RiskWidget";
 import PrecipitationChart from "./components/PrecipitationChart";
 import { SP_DISTRICTS } from "./districtsData";
+import distritosSP from "../assets/data/trusted_district.json";
+
 import { ClimatePrevisao } from "./types";
+import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
+import { point } from "@turf/helpers";
 import {
   CloudRain,
   RefreshCw,
@@ -55,6 +59,57 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
+  function encontrarDistritoAproximado(latitude: number, longitude: number) {
+    const rad = (graus: number) => (graus * Math.PI) / 180;
+
+    const distanciaKm = (lat2: number, lon2: number) => {
+      const dLat = rad(lat2 - latitude);
+      const dLon = rad(lon2 - longitude);
+      const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(rad(latitude)) * Math.cos(rad(lat2)) * Math.sin(dLon / 2) ** 2;
+
+      return 6371 * 2 * Math.asin(Math.sqrt(a));
+    };
+
+    const maisProximo = distritosSP.features.reduce<{
+      nome: string;
+      distancia: number;
+    } | null>((melhor, distrito) => {
+      const [latDistrito, lonDistrito] = distrito.geometry.coordinates;
+      const distancia = distanciaKm(latDistrito, lonDistrito);
+
+      return !melhor || distancia < melhor.distancia
+        ? { nome: distrito.properties.nome, distancia }
+        : melhor;
+    }, null);
+
+    return maisProximo?.nome ?? null;
+  }
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        console.log(
+          "Localização do usuário:",
+          coords.latitude,
+          coords.longitude,
+        );
+        const distrito = encontrarDistritoAproximado(
+          coords.latitude,
+          coords.longitude,
+        );
+
+        if (distrito) {
+          setSelectedDistrict(distrito);
+        } else {
+          console.warn("Localização fora dos distritos de São Paulo");
+        }
+      },
+      (error) => console.error("Erro ao obter localização:", error),
+    );
+  }, []);
+
   const fetchPrevisao = async (distrito: string) => {
     if (!distrito) return;
 
@@ -78,7 +133,6 @@ export default function App() {
     }
   };
 
-  // Fetch forecast whenever selected district changes
   useEffect(() => {
     if (selectedDistrict) {
       fetchPrevisao(selectedDistrict);

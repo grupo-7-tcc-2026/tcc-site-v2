@@ -1,0 +1,1637 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.571233044615,
+          -46.758935258871
+        ]
+      },
+      "properties": {
+        "id": 8583410,
+        "nome": "RIO PEQUENO",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.758935258871,
+        "long": -23.571233044615
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.584801823764,
+          -46.400847385994
+        ]
+      },
+      "properties": {
+        "id": 8583465,
+        "nome": "CIDADE TIRADENTES",
+        "regi\u00e3o": "Leste",
+        "lat": -46.400847385994,
+        "long": -23.584801823764
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.680730331942,
+          -46.739400715367
+        ]
+      },
+      "properties": {
+        "id": 8583484,
+        "nome": "JARDIM SAO LUIS",
+        "regi\u00e3o": "Sul",
+        "lat": -46.739400715367,
+        "long": -23.680730331942
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.515671689123,
+          -46.493732091999
+        ]
+      },
+      "properties": {
+        "id": 8583407,
+        "nome": "PONTE RASA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.493732091999,
+        "long": -23.515671689123
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.566954949326,
+          -46.631956984653
+        ]
+      },
+      "properties": {
+        "id": 8583488,
+        "nome": "LIBERDADE",
+        "regi\u00e3o": "Centro",
+        "lat": -46.631956984653,
+        "long": -23.566954949326
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.592497364669,
+          -46.572747842319
+        ]
+      },
+      "properties": {
+        "id": 8583437,
+        "nome": "VILA PRUDENTE",
+        "regi\u00e3o": "Leste",
+        "lat": -46.572747842319,
+        "long": -23.592497364669
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.45436141802,
+          -46.662094748306
+        ]
+      },
+      "properties": {
+        "id": 8583453,
+        "nome": "CACHOEIRINHA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.662094748306,
+        "long": -23.45436141802
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.594679838026,
+          -46.543586530579
+        ]
+      },
+      "properties": {
+        "id": 8583416,
+        "nome": "SAO LUCAS",
+        "regi\u00e3o": "Leste",
+        "lat": -46.543586530579,
+        "long": -23.594679838026
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.564387331408,
+          -46.616951398036
+        ]
+      },
+      "properties": {
+        "id": 8583454,
+        "nome": "CAMBUCI",
+        "regi\u00e3o": "Centro",
+        "lat": -46.616951398036,
+        "long": -23.564387331408
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.513035935911,
+          -46.577786499665
+        ]
+      },
+      "properties": {
+        "id": 8583433,
+        "nome": "VILA MARIA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.577786499665,
+        "long": -23.513035935911
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.547613047195,
+          -46.711955306538
+        ]
+      },
+      "properties": {
+        "id": 8583442,
+        "nome": "ALTO DE PINHEIROS",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.711955306538,
+        "long": -23.547613047195
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.631199854773,
+          -46.620688471645
+        ]
+      },
+      "properties": {
+        "id": 8583467,
+        "nome": "CURSINO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.620688471645,
+        "long": -23.631199854773
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.501077683197,
+          -46.440797430368
+        ]
+      },
+      "properties": {
+        "id": 8583418,
+        "nome": "SAO MIGUEL",
+        "regi\u00e3o": "Leste",
+        "lat": -46.440797430368,
+        "long": -23.501077683197
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.599436073633,
+          -46.739230169827
+        ]
+      },
+      "properties": {
+        "id": 8583440,
+        "nome": "VILA SONIA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.739230169827,
+        "long": -23.599436073633
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.61461600142,
+          -46.641078081625
+        ]
+      },
+      "properties": {
+        "id": 8583421,
+        "nome": "SAUDE",
+        "regi\u00e3o": "Sul",
+        "lat": -46.641078081625,
+        "long": -23.61461600142
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.575976118083,
+          -46.462977838456
+        ]
+      },
+      "properties": {
+        "id": 8583400,
+        "nome": "PARQUE DO CARMO",
+        "regi\u00e3o": "Leste",
+        "lat": -46.462977838456,
+        "long": -23.575976118083
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.462142935966,
+          -46.574938054353
+        ]
+      },
+      "properties": {
+        "id": 8583478,
+        "nome": "JACANA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.574938054353,
+        "long": -23.462142935966
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.497512652686,
+          -46.676036126273
+        ]
+      },
+      "properties": {
+        "id": 8583489,
+        "nome": "LIMAO",
+        "regi\u00e3o": "Norte",
+        "lat": -46.676036126273,
+        "long": -23.497512652686
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.503385145487,
+          -46.386350187181
+        ]
+      },
+      "properties": {
+        "id": 8583475,
+        "nome": "ITAIM PAULISTA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.386350187181,
+        "long": -23.503385145487
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.706939996562,
+          -46.649868620229
+        ]
+      },
+      "properties": {
+        "id": 8583401,
+        "nome": "PEDREIRA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.649868620229,
+        "long": -23.706939996562
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.459468409269,
+          -46.640849635496
+        ]
+      },
+      "properties": {
+        "id": 8583394,
+        "nome": "MANDAQUI",
+        "regi\u00e3o": "Norte",
+        "lat": -46.640849635496,
+        "long": -23.459468409269
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.566838708126,
+          -46.571880329607
+        ]
+      },
+      "properties": {
+        "id": 8583441,
+        "nome": "AGUA RASA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.571880329607,
+        "long": -23.566838708126
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.493468246199,
+          -46.747243721753
+        ]
+      },
+      "properties": {
+        "id": 8583415,
+        "nome": "SAO DOMINGOS",
+        "regi\u00e3o": "Norte",
+        "lat": -46.747243721753,
+        "long": -23.493468246199
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.445745601111,
+          -46.739776176849
+        ]
+      },
+      "properties": {
+        "id": 8583481,
+        "nome": "JARAGUA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.739776176849,
+        "long": -23.445745601111
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.537603308583,
+          -46.594824183156
+        ]
+      },
+      "properties": {
+        "id": 8583448,
+        "nome": "BELEM",
+        "regi\u00e3o": "Leste",
+        "lat": -46.594824183156,
+        "long": -23.537603308583
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.668770265714,
+          -46.780514474402
+        ]
+      },
+      "properties": {
+        "id": 8583459,
+        "nome": "CAPAO REDONDO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.780514474402,
+        "long": -23.668770265714
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.50001109813,
+          -46.630374776921
+        ]
+      },
+      "properties": {
+        "id": 8583413,
+        "nome": "SANTANA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.630374776921,
+        "long": -23.50001109813
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.596113607285,
+          -46.66136579753
+        ]
+      },
+      "properties": {
+        "id": 8583396,
+        "nome": "MOEMA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.66136579753,
+        "long": -23.596113607285
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.612570521102,
+          -46.426766041456
+        ]
+      },
+      "properties": {
+        "id": 8583472,
+        "nome": "IGUATEMI",
+        "regi\u00e3o": "Leste",
+        "lat": -46.426766041456,
+        "long": -23.612570521102
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.534020018129,
+          -46.455942456924
+        ]
+      },
+      "properties": {
+        "id": 8583476,
+        "nome": "ITAQUERA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.455942456924,
+        "long": -23.534020018129
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.533630221216,
+          -46.408629684801
+        ]
+      },
+      "properties": {
+        "id": 8583486,
+        "nome": "LAJEADO",
+        "regi\u00e3o": "Leste",
+        "lat": -46.408629684801,
+        "long": -23.533630221216
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.674597449912,
+          -46.687516149921
+        ]
+      },
+      "properties": {
+        "id": 8583456,
+        "nome": "CAMPO GRANDE",
+        "regi\u00e3o": "Sul",
+        "lat": -46.687516149921,
+        "long": -23.674597449912
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.511033368932,
+          -46.747133013232
+        ]
+      },
+      "properties": {
+        "id": 8583479,
+        "nome": "JAGUARA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.747133013232,
+        "long": -23.511033368932
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.567392354031,
+          -46.432662336309
+        ]
+      },
+      "properties": {
+        "id": 8583485,
+        "nome": "JOSE BONIFACIO",
+        "regi\u00e3o": "Leste",
+        "lat": -46.432662336309,
+        "long": -23.567392354031
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.498903125334,
+          -46.518767248413
+        ]
+      },
+      "properties": {
+        "id": 8583458,
+        "nome": "CANGAIBA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.518767248413,
+        "long": -23.498903125334
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.596320032237,
+          -46.708023024994
+        ]
+      },
+      "properties": {
+        "id": 8583398,
+        "nome": "MORUMBI",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.708023024994,
+        "long": -23.596320032237
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.417470878219,
+          -46.589213993428
+        ]
+      },
+      "properties": {
+        "id": 8583425,
+        "nome": "TREMEMBE",
+        "regi\u00e3o": "Norte",
+        "lat": -46.589213993428,
+        "long": -23.417470878219
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.725764743617,
+          -46.702399790258
+        ]
+      },
+      "properties": {
+        "id": 8583463,
+        "nome": "CIDADE DUTRA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.702399790258,
+        "long": -23.725764743617
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.570195967691,
+          -46.726268866771
+        ]
+      },
+      "properties": {
+        "id": 8583452,
+        "nome": "BUTANTA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.726268866771,
+        "long": -23.570195967691
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.830119709383,
+          -46.716283206124
+        ]
+      },
+      "properties": {
+        "id": 8583439,
+        "nome": "PARELHEIROS",
+        "regi\u00e3o": "Sul",
+        "lat": -46.716283206124,
+        "long": -23.830119709383
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.628206983927,
+          -46.453940022926
+        ]
+      },
+      "properties": {
+        "id": 8583419,
+        "nome": "SAO RAFAEL",
+        "regi\u00e3o": "Leste",
+        "lat": -46.453940022926,
+        "long": -23.628206983927
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.544763785863,
+          -46.641051050731
+        ]
+      },
+      "properties": {
+        "id": 8583409,
+        "nome": "REPUBLICA",
+        "regi\u00e3o": "Centro",
+        "lat": -46.641051050731,
+        "long": -23.544763785863
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.55637292981,
+          -46.406617119346
+        ]
+      },
+      "properties": {
+        "id": 8583471,
+        "nome": "GUAIANASES",
+        "regi\u00e3o": "Leste",
+        "lat": -46.406617119346,
+        "long": -23.55637292981
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.538681011373,
+          -46.567450439307
+        ]
+      },
+      "properties": {
+        "id": 8583424,
+        "nome": "TATUAPE",
+        "regi\u00e3o": "Leste",
+        "lat": -46.567450439307,
+        "long": -23.538681011373
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.567858195308,
+          -46.545991025449
+        ]
+      },
+      "properties": {
+        "id": 8583429,
+        "nome": "VILA FORMOSA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.545991025449,
+        "long": -23.567858195308
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.52320130128,
+          -46.529036319474
+        ]
+      },
+      "properties": {
+        "id": 8583402,
+        "nome": "PENHA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.529036319474,
+        "long": -23.52320130128
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.480949410849,
+          -46.726176523914
+        ]
+      },
+      "properties": {
+        "id": 8583406,
+        "nome": "PIRITUBA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.726176523914,
+        "long": -23.480949410849
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.562018363964,
+          -46.491303321458
+        ]
+      },
+      "properties": {
+        "id": 8583464,
+        "nome": "CIDADE LIDER",
+        "regi\u00e3o": "Leste",
+        "lat": -46.491303321458,
+        "long": -23.562018363964
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.566473573379,
+          -46.688672527665
+        ]
+      },
+      "properties": {
+        "id": 8583405,
+        "nome": "PINHEIROS",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.688672527665,
+        "long": -23.566473573379
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.538721260692,
+          -46.680933539799
+        ]
+      },
+      "properties": {
+        "id": 8583403,
+        "nome": "PERDIZES",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.680933539799,
+        "long": -23.538721260692
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.548692855933,
+          -46.660228779403
+        ]
+      },
+      "properties": {
+        "id": 8583466,
+        "nome": "CONSOLACAO",
+        "regi\u00e3o": "Centro",
+        "lat": -46.660228779403,
+        "long": -23.548692855933
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.483700890842,
+          -46.412906890196
+        ]
+      },
+      "properties": {
+        "id": 8583482,
+        "nome": "JARDIM HELENA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.412906890196,
+        "long": -23.483700890842
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.635864413192,
+          -46.76350175507
+        ]
+      },
+      "properties": {
+        "id": 8583457,
+        "nome": "CAMPO LIMPO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.76350175507,
+        "long": -23.635864413192
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.628080313632,
+          -46.667908429392
+        ]
+      },
+      "properties": {
+        "id": 8583455,
+        "nome": "CAMPO BELO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.667908429392,
+        "long": -23.628080313632
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.650550145151,
+          -46.645908314635
+        ]
+      },
+      "properties": {
+        "id": 8583477,
+        "nome": "JABAQUARA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.645908314635,
+        "long": -23.650550145151
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.716043432631,
+          -46.768090934669
+        ]
+      },
+      "properties": {
+        "id": 8583438,
+        "nome": "JARDIM ANGELA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.768090934669,
+        "long": -23.716043432631
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.543746951635,
+          -46.617469229773
+        ]
+      },
+      "properties": {
+        "id": 8583450,
+        "nome": "BRAS",
+        "regi\u00e3o": "Leste",
+        "lat": -46.617469229773,
+        "long": -23.543746951635
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.48622527019,
+          -46.697395355012
+        ]
+      },
+      "properties": {
+        "id": 8583469,
+        "nome": "FREGUESIA DO O",
+        "regi\u00e3o": "Norte",
+        "lat": -46.697395355012,
+        "long": -23.48622527019
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.448622449383,
+          -46.688388481685
+        ]
+      },
+      "properties": {
+        "id": 8583451,
+        "nome": "BRASILANDIA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.688388481685,
+        "long": -23.448622449383
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.630814068241,
+          -46.598171845009
+        ]
+      },
+      "properties": {
+        "id": 8583411,
+        "nome": "SACOMA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.598171845009,
+        "long": -23.630814068241
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.566514358639,
+          -46.666759102622
+        ]
+      },
+      "properties": {
+        "id": 8583483,
+        "nome": "JARDIM PAULISTA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.666759102622,
+        "long": -23.566514358639
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.509178004688,
+          -46.605765564567
+        ]
+      },
+      "properties": {
+        "id": 8583430,
+        "nome": "VILA GUILHERME",
+        "regi\u00e3o": "Norte",
+        "lat": -46.605765564567,
+        "long": -23.509178004688
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.59240084392,
+          -46.785415280908
+        ]
+      },
+      "properties": {
+        "id": 8583408,
+        "nome": "RAPOSO TAVARES",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.785415280908,
+        "long": -23.59240084392
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.522635496515,
+          -46.705976486415
+        ]
+      },
+      "properties": {
+        "id": 8583487,
+        "nome": "LAPA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.705976486415,
+        "long": -23.522635496515
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.502624825689,
+          -46.461563921917
+        ]
+      },
+      "properties": {
+        "id": 8583431,
+        "nome": "VILA JACUI",
+        "regi\u00e3o": "Leste",
+        "lat": -46.461563921917,
+        "long": -23.502624825689
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.591807930755,
+          -46.602833910264
+        ]
+      },
+      "properties": {
+        "id": 8583473,
+        "nome": "IPIRANGA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.602833910264,
+        "long": -23.591807930755
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.430493324429,
+          -46.793128267804
+        ]
+      },
+      "properties": {
+        "id": 8583443,
+        "nome": "ANHANGUERA",
+        "regi\u00e3o": "Norte",
+        "lat": -46.793128267804,
+        "long": -23.430493324429
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.605570383272,
+          -46.509547862006
+        ]
+      },
+      "properties": {
+        "id": 8583420,
+        "nome": "SAPOPEMBA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.509547862006,
+        "long": -23.605570383272
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.673757223109,
+          -46.656874181403
+        ]
+      },
+      "properties": {
+        "id": 8583462,
+        "nome": "CIDADE ADEMAR",
+        "regi\u00e3o": "Sul",
+        "lat": -46.656874181403,
+        "long": -23.673757223109
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.60005968732,
+          -46.481275126822
+        ]
+      },
+      "properties": {
+        "id": 8583417,
+        "nome": "SAO MATEUS",
+        "regi\u00e3o": "Leste",
+        "lat": -46.481275126822,
+        "long": -23.60005968732
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.573813486145,
+          -46.515611200027
+        ]
+      },
+      "properties": {
+        "id": 8583444,
+        "nome": "ARICANDUVA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.515611200027,
+        "long": -23.573813486145
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.50999605671,
+          -46.415654784618
+        ]
+      },
+      "properties": {
+        "id": 8583428,
+        "nome": "VILA CURUCA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.415654784618,
+        "long": -23.50999605671
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.602105444735,
+          -46.685359398782
+        ]
+      },
+      "properties": {
+        "id": 8583474,
+        "nome": "ITAIM BIBI",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.685359398782,
+        "long": -23.602105444735
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.543828557305,
+          -46.74882914106
+        ]
+      },
+      "properties": {
+        "id": 8583480,
+        "nome": "JAGUARE",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.74882914106,
+        "long": -23.543828557305
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.50098814528,
+          -46.657439182425
+        ]
+      },
+      "properties": {
+        "id": 8583461,
+        "nome": "CASA VERDE",
+        "regi\u00e3o": "Norte",
+        "lat": -46.657439182425,
+        "long": -23.50098814528
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.789458397735,
+          -46.668638876563
+        ]
+      },
+      "properties": {
+        "id": 8583470,
+        "nome": "GRAJAU",
+        "regi\u00e3o": "Sul",
+        "lat": -46.668638876563,
+        "long": -23.789458397735
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.529268906664,
+          -46.734370295776
+        ]
+      },
+      "properties": {
+        "id": 8583432,
+        "nome": "VILA LEOPOLDINA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.734370295776,
+        "long": -23.529268906664
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.560855974916,
+          -46.647579898491
+        ]
+      },
+      "properties": {
+        "id": 8583447,
+        "nome": "BELA VISTA",
+        "regi\u00e3o": "Centro",
+        "lat": -46.647579898491,
+        "long": -23.560855974916
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.561345497623,
+          -46.596412258128
+        ]
+      },
+      "properties": {
+        "id": 8583397,
+        "nome": "MOOCA",
+        "regi\u00e3o": "Leste",
+        "lat": -46.596412258128,
+        "long": -23.561345497623
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.526068991199,
+          -46.636812803606
+        ]
+      },
+      "properties": {
+        "id": 8583449,
+        "nome": "BOM RETIRO",
+        "regi\u00e3o": "Centro",
+        "lat": -46.636812803606,
+        "long": -23.526068991199
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.491294890861,
+          -46.484530068038
+        ]
+      },
+      "properties": {
+        "id": 8583468,
+        "nome": "ERMELINO MATARAZZO",
+        "regi\u00e3o": "Leste",
+        "lat": -46.484530068038,
+        "long": -23.491294890861
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.642373328476,
+          -46.701196025734
+        ]
+      },
+      "properties": {
+        "id": 8583414,
+        "nome": "SANTO AMARO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.701196025734,
+        "long": -23.642373328476
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.586503439283,
+          -46.635799002218
+        ]
+      },
+      "properties": {
+        "id": 8583434,
+        "nome": "VILA MARIANA",
+        "regi\u00e3o": "Sul",
+        "lat": -46.635799002218,
+        "long": -23.586503439283
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.55107955133,
+          -46.538293721191
+        ]
+      },
+      "properties": {
+        "id": 8583460,
+        "nome": "CARRAO",
+        "regi\u00e3o": "Leste",
+        "lat": -46.538293721191,
+        "long": -23.55107955133
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.521195567882,
+          -46.674086651051
+        ]
+      },
+      "properties": {
+        "id": 8583446,
+        "nome": "BARRA FUNDA",
+        "regi\u00e3o": "Oeste",
+        "lat": -46.674086651051,
+        "long": -23.521195567882
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.626230581869,
+          -46.72827920413
+        ]
+      },
+      "properties": {
+        "id": 8583427,
+        "nome": "VILA ANDRADE",
+        "regi\u00e3o": "Sul",
+        "lat": -46.72827920413,
+        "long": -23.626230581869
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.531795249227,
+          -46.652876570184
+        ]
+      },
+      "properties": {
+        "id": 8583412,
+        "nome": "SANTA CECILIA",
+        "regi\u00e3o": "Centro",
+        "lat": -46.652876570184,
+        "long": -23.531795249227
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.539360756616,
+          -46.517875490702
+        ]
+      },
+      "properties": {
+        "id": 8583435,
+        "nome": "VILA MATILDE",
+        "regi\u00e3o": "Leste",
+        "lat": -46.517875490702,
+        "long": -23.539360756616
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.407923496128,
+          -46.746142562132
+        ]
+      },
+      "properties": {
+        "id": 8583404,
+        "nome": "PERUS",
+        "regi\u00e3o": "Norte",
+        "lat": -46.746142562132,
+        "long": -23.407923496128
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.540143854908,
+          -46.485817901009
+        ]
+      },
+      "properties": {
+        "id": 8583445,
+        "nome": "ARTUR ALVIM",
+        "regi\u00e3o": "Leste",
+        "lat": -46.485817901009,
+        "long": -23.540143854908
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.685280441544,
+          -46.713716796629
+        ]
+      },
+      "properties": {
+        "id": 8583423,
+        "nome": "SOCORRO",
+        "regi\u00e3o": "Sul",
+        "lat": -46.713716796629,
+        "long": -23.685280441544
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.527186237471,
+          -46.617511465754
+        ]
+      },
+      "properties": {
+        "id": 8583399,
+        "nome": "PARI",
+        "regi\u00e3o": "Leste",
+        "lat": -46.617511465754,
+        "long": -23.527186237471
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.935263031758,
+          -46.707981624585
+        ]
+      },
+      "properties": {
+        "id": 8583395,
+        "nome": "MARSILAC",
+        "regi\u00e3o": "Sul",
+        "lat": -46.707981624585,
+        "long": -23.935263031758
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.547713025202,
+          -46.631447810426
+        ]
+      },
+      "properties": {
+        "id": 8583422,
+        "nome": "SE",
+        "regi\u00e3o": "Centro",
+        "lat": -46.631447810426,
+        "long": -23.547713025202
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.488737336559,
+          -46.577619541494
+        ]
+      },
+      "properties": {
+        "id": 8583436,
+        "nome": "VILA MEDEIROS",
+        "regi\u00e3o": "Norte",
+        "lat": -46.577619541494,
+        "long": -23.488737336559
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.475702115009,
+          -46.606043153197
+        ]
+      },
+      "properties": {
+        "id": 8583426,
+        "nome": "TUCURUVI",
+        "regi\u00e3o": "Norte",
+        "lat": -46.606043153197,
+        "long": -23.475702115009
+      }
+    }
+  ]
+}
