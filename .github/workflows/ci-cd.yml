@@ -1,0 +1,67 @@
+name: CI/CD - tcc-site-v2
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: tcc-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar
+        run: npm run build
+        env:
+          VITE_APP_URL: ${{ secrets.PREVISION_API_URL }}
+
+  deploy:
+    name: Deploy para EC2
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Atualizar, compilar e reiniciar na EC2
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          VITE_APP_URL: ${{ secrets.PREVISION_API_URL }}
+        with:
+          host: ${{ secrets.EC2_SITE_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          envs: VITE_APP_URL
+          script: |
+            set -euxo pipefail
+
+            cd /opt/tcc-site-v2
+            git fetch origin main
+            git checkout main
+            git reset --hard origin/main
+
+            npm ci
+            npm run build
+
+            sudo systemctl restart tcc-site
+            sudo systemctl is-active --quiet tcc-site
