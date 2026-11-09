@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import dotenv from "dotenv";
-import { GoogleGenAI, Type } from "@google/genai";
+// import { GoogleGenAI, Type } from "@google/genai";
 import { createServer as createViteServer } from "vite";
 
 // Load environment variables
@@ -12,7 +12,7 @@ const PORT = 4200;
 
 app.use(express.json());
 
-// Initialize Gemini SDK with User-Agent telemetry
+/* Initialize Gemini SDK with User-Agent telemetry
 const apiKey = process.env.GEMINI_API_KEY;
 let ai: GoogleGenAI | null = null;
 
@@ -29,6 +29,7 @@ if (apiKey) {
 } else {
   console.log("No GEMINI_API_KEY environment variable found. Falling back to local deterministic predictive synthesis.");
 }
+*/
 
 // Map districts of São Paulo to fallback historical features (elevation, susceptibility, rivers nearby)
 // so the offline/fallback prediction remains ultra-realistic and highly engaging.
@@ -186,18 +187,16 @@ app.get("/api/previsao", async (req, res) => {
   const timeString = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   const dateString = new Date().toLocaleDateString("pt-BR");
 
-  if (!ai) {
-    // Return high-quality localized fallback prediction
-    const fallbackData = getHistoricalFallbackData(distrito);
-    return res.json({
-      distrito,
-      horario_analise: timeString,
-      data_analise: dateString,
-      fonte: "Previsão Histórica / CGE Fallback",
-      ...fallbackData
-    });
-  }
+  const fallbackData = getHistoricalFallbackData(distrito);
+  return res.json({
+    distrito,
+    horario_analise: timeString,
+    data_analise: dateString,
+    fonte: "Previsão Histórica / CGE Fallback",
+    ...fallbackData
+  });
 
+  /*
   try {
     const systemPrompt = `Você é o meteorologista e especialista em hidrologia urbana do centro de monitoramento climático da cidade de São Paulo.
 Sua missão é emitir pareceres meteorológicos e de riscos de alagamento precisos e fundamentados para qualquer distrito de São Paulo solicitado pelo usuário.
@@ -284,6 +283,7 @@ Regras Cruciais:
       ...fallbackData
     });
   }
+  */
 });
 
 // Serve frontend assets

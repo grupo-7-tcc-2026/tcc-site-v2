@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import DistrictSelector from "./components/DistrictSelector";
 import RiskWidget from "./components/RiskWidget";
 import PrecipitationChart from "./components/PrecipitationChart";
-import { SP_DISTRICTS } from "./districtsData";
-import { ClimatePrevisao } from "./types";
+import { fetchDistricts } from "./districtsData";
+import { ClimatePrevisao, District } from "./types";
 import { 
   CloudRain, 
   RefreshCw, 
@@ -24,12 +24,18 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState("");
+  const [districts, setDistricts] = useState<District[]>([]);
 
   useEffect(() => {
-    if (!selectedDistrict && SP_DISTRICTS.length > 0) {
-      setSelectedDistrict(SP_DISTRICTS[0].nome);
-    }
-  }, [selectedDistrict]);
+    fetchDistricts().then((items) => {
+      setDistricts(items);
+      if (items.length) setSelectedDistrict(items[0].nome);
+      else setError("A API não retornou distritos.");
+    }).catch((err) => {
+      console.error(err);
+      setError("Não foi possível carregar os distritos.");
+    });
+  }, []);
 
   // Keep a digital clock ticking to represent real-time stream status
   useEffect(() => {
@@ -71,7 +77,7 @@ export default function App() {
   }, [selectedDistrict]);
 
   const handleRefresh = () => {
-    const districtToFetch = selectedDistrict || SP_DISTRICTS[0]?.nome || "";
+    const districtToFetch = selectedDistrict || districts[0]?.nome || "";
     if (!districtToFetch) return;
 
     fetchPrevisao(districtToFetch);
@@ -144,6 +150,7 @@ export default function App() {
           <DistrictSelector 
             selectedDistrict={selectedDistrict}
             onSelectDistrict={(name) => setSelectedDistrict(name)}
+            districts={districts}
           />
         </div>
  

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { SP_DISTRICTS } from "../districtsData";
 import { District } from "../types";
 import { Search, MapPin, Grid, AlertTriangle } from "lucide-react";
 
 interface DistrictSelectorProps {
   selectedDistrict: string;
   onSelectDistrict: (name: string) => void;
+  districts: District[];
 }
 
 type RegionTab = "Todos" | "Centro" | "Oeste" | "Sul" | "Norte" | "Leste";
@@ -13,15 +13,16 @@ type RegionTab = "Todos" | "Centro" | "Oeste" | "Sul" | "Norte" | "Leste";
 export default function DistrictSelector({
   selectedDistrict,
   onSelectDistrict,
+  districts,
 }: DistrictSelectorProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState<RegionTab>("Todos");
 
-  const filteredDistricts = SP_DISTRICTS.filter((d) => {
+  const filteredDistricts = districts.filter((d) => {
     const matchesSearch = d.nome.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(
       searchTerm.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     );
-    const matchesTab = activeTab === "Todos" || d.region === activeTab;
+    const matchesTab = activeTab === "Todos" || d.regiao === activeTab;
     return matchesSearch && matchesTab;
   });
 
@@ -127,7 +128,7 @@ export default function DistrictSelector({
       </div>
 
       <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-slate-500">
-        <span>Total: {filteredDistricts.length} de {SP_DISTRICTS.length} distritos</span>
+        <span>Total: {filteredDistricts.length} de {districts.length} distritos</span>
       </div>
     </div>
   );

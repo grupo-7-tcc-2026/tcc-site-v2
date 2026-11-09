@@ -6,3 +6,37 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
+
+@media print {
+  body:has([role="dialog"]) {
+    height: 0;
+    overflow: visible;
+  }
+  body * {
+    visibility: hidden;
+  }
+  [role="dialog"], [role="dialog"] * {
+    visibility: visible;
+  }
+  [role="dialog"] {
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: white;
+    color: black;
+  }
+  [role="dialog"] > div {
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    background: white;
+    color: black;
+  }
+  [role="dialog"] p {
+    color: black;
+  }
+  [role="dialog"] button {
+    display: none;
+  }
+}

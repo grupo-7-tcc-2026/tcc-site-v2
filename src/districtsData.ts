@@ -1,3 +1,9 @@
-const resposta = await fetch(`${import.meta.env.VITE_APP_URL}/distritos`);
-export const SP_DISTRICTS = await resposta.json();
-localStorage.setItem('distritos', JSON.stringify(SP_DISTRICTS));
+import type { District } from "./types";
+
+export async function fetchDistricts(): Promise<District[]> {
+  const response = await fetch(`${import.meta.env.VITE_APP_URL}/distritos`);
+  if (!response.ok) throw new Error("Não foi possível carregar os distritos.");
+  const data = await response.json();
+  if (!Array.isArray(data)) throw new Error("A API retornou uma lista de distritos inválida.");
+  return data;
+}

@@ -35,6 +35,9 @@ jobs:
         env:
           VITE_APP_URL: ${{ secrets.PREVISION_API_URL }}
 
+      - name: Verificar tipos
+        run: npm run lint
+
   deploy:
     name: Deploy para EC2
     needs: build
@@ -53,7 +56,11 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           envs: VITE_APP_URL
           script: |
-            set -euxo pipefail
+            set -euo pipefail
+            if [ -z "${VITE_APP_URL:-}" ]; then
+              echo "PREVISION_API_URL nao configurada."
+              exit 1
+            fi
 
             cd /opt/tcc-site-v2
             git fetch origin main
@@ -65,3 +72,11 @@ jobs:
 
             sudo systemctl restart tcc-site
             sudo systemctl is-active --quiet tcc-site
+            for attempt in $(seq 1 30); do
+              if curl --fail --silent --output /dev/null http://127.0.0.1:4200/; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Site nao respondeu apos o reinicio."
+            exit 1

@@ -20,7 +20,15 @@ Aplicação web em React + TypeScript para visualização de dados de precipita�
 npm install
 ```
 
-3. Crie um arquivo `.env` na raiz se precisar definir variáveis de ambiente (há um arquivo `.env` no workspace atual onde você pode configurar chaves/portas).
+3. Configure a URL da API de previsão no arquivo `.env.local` na raiz:
+
+```env
+VITE_APP_URL=http://127.0.0.1:8000
+```
+
+Inicie também a API nessa URL. Ela deve fornecer os endpoints `/distritos` e `/prever-distrito/:distrito`. Reinicie o servidor de desenvolvimento após alterar a configuração e acesse `http://localhost:4200`. A API precisa permitir essa origem via CORS.
+
+Para cadastro, login e histórico, configure também o MySQL e as tabelas conforme o README da `prevision-api`. Na aba Rua, o relatório é demonstrativo: a foto ainda não é analisada e a probabilidade exibida é fictícia. No histórico, abra um relatório salvo para visualizá-lo com sua imagem e exportá-lo. O botão "Imprimir / salvar PDF" abre a impressão do navegador; selecione "Salvar como PDF". O histórico exibe os últimos 100 registros e permite excluir relatórios e imagens.
 
 ## Scripts úteis
 Os scripts definidos em `package.json` são:
@@ -63,11 +71,10 @@ Principais arquivos do frontend:
 
 ## Observações
 - Verifique e configure o arquivo `.env` conforme necessário antes de executar em produção.
+- A integração com o Gemini no servidor Express está desativada. Seu endpoint `/api/previsao` usa dados locais simulados, que não são previsões meteorológicas reais. O frontend consulta a API configurada em `VITE_APP_URL`.
 - Se usar outro gerenciador de pacotes (pnpm/yarn), adapte os comandos equivalentes.
 
 ## Contribuição
 - Abra issues ou envie PRs com melhorias ou correções.
 
 ---
-
-
