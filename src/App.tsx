@@ -15,10 +15,8 @@ import {
   Clock,
   BookOpen,
   ImagePlus,
-  Server,
   CloudLightning,
   Map,
-  Sparkles,
   Info,
   X,
 } from "lucide-react";
@@ -320,19 +318,6 @@ export default function App() {
                     </p>
                   </div> */}
 
-              {/* <div className="flex items-center gap-2 bg-[#050506] border border-white/5 px-3 py-1.5 rounded self-start md:self-auto font-mono text-[9px] tracking-wider">
-                    {previsao.erro_api ? (
-                      <>
-                        <Server size={12} className="text-orange-400" />
-                        <span className="text-slate-400">Servidor local: <strong className="text-orange-400 font-semibold font-mono">Modelo Histórico</strong></span>
-                      </>
-                    ) : (
-                      <>
-                        <Sparkles size={12} className="text-red-400 animate-pulse" />
-                        <span className="text-slate-400">Análise: <strong className="text-red-400 font-medium font-mono">Cognitiva Gemini</strong></span>
-                      </>
-                    )}
-                  </div> */}
               {/* </div> */}
               {/* </div> */}
 
@@ -406,7 +391,7 @@ export default function App() {
       {/* METEOROLOGICAL DISCLAIMER STYLING FOOTER */}
       <footer className="border-t border-white/5 bg-[#030303] py-8 text-center text-[10px] font-mono text-slate-500 uppercase tracking-widest mt-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>© 2026 Inteligência de monitoramento SP • gemini engine</span>
+          <span>© 2026 Inteligência de monitoramento SP</span>
           <div className="flex items-center gap-5">
             <span className="hover:text-slate-300 cursor-help transition-colors">
               PMRR SP
