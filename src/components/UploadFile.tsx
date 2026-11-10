@@ -1,20 +1,32 @@
 import { DragEvent, FormEvent, useRef, useState } from "react";
 import { Check, ImagePlus, Upload } from "lucide-react";
+import { PhotoReportLocation } from "../types";
 
 const acceptedFileTypes = ["image/png", "image/jpeg", "image/webp"];
 
-export default function UploadFile() {
+interface UploadFileProps {
+    canCalculate: boolean;
+    onCalculate: (location: PhotoReportLocation) => void;
+}
+
+export default function UploadFile({ canCalculate, onCalculate }: UploadFileProps) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [zone, setZone] = useState("");
     const [neighborhood, setNeighborhood] = useState("");
     const [street, setStreet] = useState("");
+    const [submitError, setSubmitError] = useState("");
 
     const selectFile = (file: File | undefined) => {
-        if (file && acceptedFileTypes.includes(file.type)) {
-            setSelectedFile(file);
+        if (!file) return;
+        if (!acceptedFileTypes.includes(file.type)) {
+            setSubmitError("Selecione uma imagem PNG, JPG ou WEBP.");
+            return;
         }
+
+        setSelectedFile(file);
+        setSubmitError("");
     };
 
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
@@ -25,6 +37,16 @@ export default function UploadFile() {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (!selectedFile) {
+            setSubmitError("Envie uma foto para calcular a previsão.");
+            return;
+        }
+        if (!canCalculate) {
+            setSubmitError("A previsão do distrito ainda não está disponível.");
+            return;
+        }
+
+        onCalculate({ photo: selectedFile, zone, neighborhood, street });
     };
 
     return (
@@ -132,10 +154,21 @@ export default function UploadFile() {
 
                 <button
                     type="submit"
-                    className="mt-8 h-12 w-full rounded-xl bg-white px-4 text-sm font-semibold text-black transition-colors hover:bg-[#e6b82e] hover:text-white"
+                    disabled={!canCalculate}
+                    className="mt-8 h-12 w-full rounded-xl bg-white px-4 text-sm font-semibold text-black transition-colors hover:bg-[#e6b82e] hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     Calcular Previsão
                 </button>
+                {!canCalculate && (
+                    <p className="mt-3 text-center text-xs text-amber-300/80">
+                        Aguardando a previsão do distrito.
+                    </p>
+                )}
+                {submitError && (
+                    <p role="alert" className="mt-3 text-center text-xs text-red-300">
+                        {submitError}
+                    </p>
+                )}
             </div>
         </form>
     );

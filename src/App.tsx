@@ -6,6 +6,7 @@ import { SP_DISTRICTS } from "./districtsData";
 import distritosSP from "../assets/data/trusted_district.json";
 
 import { ClimatePrevisao } from "./types";
+import { PhotoReportLocation } from "./types";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 import { point } from "@turf/helpers";
 import {
@@ -21,6 +22,7 @@ import {
   X,
 } from "lucide-react";
 import UploadFile from "./components/UploadFile";
+import PhotoReportModal from "./components/PhotoReportModal";
 
 export default function App() {
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -29,9 +31,16 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState("");
   const [modalFile, setModalFile] = useState(false);
+  const [photoReportLocation, setPhotoReportLocation] =
+    useState<PhotoReportLocation | null>(null);
 
   const toggleModalFile = () => {
-    setModalFile(!modalFile);
+    setModalFile((isOpen) => !isOpen);
+  };
+
+  const handlePhotoForecast = (location: PhotoReportLocation) => {
+    setPhotoReportLocation(location);
+    setModalFile(false);
   };
 
   useEffect(() => {
@@ -242,10 +251,20 @@ export default function App() {
               onClick={toggleModalFile}
             />
             <div className="mt-8">
-              <UploadFile />
+              <UploadFile
+                canCalculate={Boolean(previsao) && !loading}
+                onCalculate={handlePhotoForecast}
+              />
             </div>
           </div>
         </div>
+      )}
+      {photoReportLocation && previsao && (
+        <PhotoReportModal
+          forecast={previsao}
+          location={photoReportLocation}
+          onClose={() => setPhotoReportLocation(null)}
+        />
       )}
 
       {/* CORE FRAME CONTAINER LAYOUT */}

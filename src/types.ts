@@ -30,6 +30,13 @@ export interface ClimatePrevisao {
   erro_api?: boolean;
 }
 
+export interface PhotoReportLocation {
+  photo: File;
+  zone: string;
+  neighborhood: string;
+  street: string;
+}
+
 export interface District {
   id: number;
   nome: string;
