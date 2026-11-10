@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import dotenv from "dotenv";
-// import { GoogleGenAI, Type } from "@google/genai";
 import { createServer as createViteServer } from "vite";
 
 // Load environment variables
@@ -11,25 +10,6 @@ const app = express();
 const PORT = 4200;
 
 app.use(express.json());
-
-/* Initialize Gemini SDK with User-Agent telemetry
-const apiKey = process.env.GEMINI_API_KEY;
-let ai: GoogleGenAI | null = null;
-
-if (apiKey) {
-  ai = new GoogleGenAI({
-    apiKey: apiKey,
-    httpOptions: {
-      headers: {
-        'User-Agent': 'aistudio-build',
-      }
-    }
-  });
-  console.log("Gemini SDK initialized successfully.");
-} else {
-  console.log("No GEMINI_API_KEY environment variable found. Falling back to local deterministic predictive synthesis.");
-}
-*/
 
 // Map districts of São Paulo to fallback historical features (elevation, susceptibility, rivers nearby)
 // so the offline/fallback prediction remains ultra-realistic and highly engaging.
@@ -187,103 +167,14 @@ app.get("/api/previsao", async (req, res) => {
   const timeString = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   const dateString = new Date().toLocaleDateString("pt-BR");
 
-  const fallbackData = getHistoricalFallbackData(distrito);
+  const previsao = getHistoricalFallbackData(distrito);
   return res.json({
     distrito,
     horario_analise: timeString,
     data_analise: dateString,
-    fonte: "Previsão Histórica / CGE Fallback",
-    ...fallbackData
+    fonte: "Previsão histórica local",
+    ...previsao
   });
-
-  /*
-  try {
-    const systemPrompt = `Você é o meteorologista e especialista em hidrologia urbana do centro de monitoramento climático da cidade de São Paulo.
-Sua missão é emitir pareceres meteorológicos e de riscos de alagamento precisos e fundamentados para qualquer distrito de São Paulo solicitado pelo usuário.
-Baseado em dados históricos, bacias hidrográficas de SP (ex: Tamanduateí, Tietê, Pinheiros, Aricanduva), e relevo, forneça uma análise realista de probabilidade de alagamento nas próximas 6 horas a contar do momento atual.
-
-A resposta DEVE ser um objeto JSON estritamente válido respeitando o seguinte esquema de tipos:
-{
-  "probabilidade_dia": number (valor decimal de probabilidade diária geral de alagamento entre 0 e 1, exemplo 0.9375),
-  "nivel_risco": "Baixo" | "Moderado" | "Alto" | "Muito Alto" (estatisticamente relacionado à probabilidade do dia),
-  "temperatura": number (temperatura atual típica em graus Celsius, ex: 22),
-  "humidade": number (humidade relativa atual %, ex: 85),
-  "precipitacao_estimada": number (precipitação esperada em mm para as próximas horas, ex: 35),
-  "condicao_atual": string (breve descrição em português, ex: "Chuva Forte", "Instabilidade isolada"),
-  "alerta_ativo": boolean (true para risco Alto ou Muito Alto),
-  "detalhes_alerta": string (explicação sucinta e contextualizada em português sobre as características físicas do distrito que justificam esse risco, como córregos próximos, se é fundo de vale, impermeabilização, etc.),
-  "recomendacoes": [string] (lista de 3 recomendações de segurança cruciais para a população local de acordo com o risco),
-  "horarios_criticos": Array<{
-     "hora": number (representando a hora do dia de 0 a 23, ex: 14),
-     "prob_alagamento": number (decimal entre 0 e 1, ex: 0.8125)
-  }> (Deve conter exatamente 6 elementos mapeando as próximas 6 horas progressivas)
-}
-
-Regras Cruciais:
-1. Retorne APENAS o JSON puro, sem formatações adicionais de bloco markdown (sem \`\`\`json).
-2. Seja super realista sobre o distrito especificado! Por exemplo, "Aricanduva" tem riscos altíssimos de alagamento devido ao rio homônimo; "Mooca" possui pontos baixos históricos; "Sé" possui problemas de refluxo central; "Alto de Pinheiros" é mais seguro, mas com pontos específicos.
-3. Considere que a hora atual é por volta de ${new Date().getHours()}h. Projete as próximas 6 horas sequencialmente para a chave 'horarios_criticos'.`;
-
-    // Internal helper for retrying with fallback models (such as gemini-3.1-flash-lite) if gemini-3.5-flash is unavailable
-    const generateWithBackup = async (aiClient: any, sysPrompt: string, userPrompt: string) => {
-      const models = ["gemini-3.5-flash", "gemini-3.1-flash-lite"];
-      let lastErr: any = null;
-
-      for (const model of models) {
-        for (let attempt = 1; attempt <= 2; attempt++) {
-          try {
-            console.log(`[Gemini] Chamando modelo ${model} (tentativa ${attempt}/2)...`);
-            const response = await aiClient.models.generateContent({
-              model,
-              contents: userPrompt,
-              config: {
-                systemInstruction: sysPrompt,
-                responseMimeType: "application/json",
-                temperature: 0.65,
-              }
-            });
-            if (response && response.text) {
-              return { text: response.text, model };
-            }
-          } catch (err: any) {
-            lastErr = err;
-            console.warn(`[Gemini] Falha no modelo ${model} tenta ${attempt}/2: ${err?.message || err}`);
-            if (attempt < 2) {
-              await new Promise((resolve) => setTimeout(resolve, 200));
-            }
-          }
-        }
-      }
-      throw lastErr || new Error("Não foi possível gerar conteúdo com nenhum dos modelos Gemini disponíveis.");
-    };
-
-    const result = await generateWithBackup(ai, systemPrompt, `Forneça a análise climática e de risco de alagamento em tempo real para o distrito: ${distrito}.`);
-    const bodyText = result.text?.trim() || "";
-    const cleanedText = bodyText.replace(/^```json/i, "").replace(/```$/, "").trim();
-    const data = JSON.parse(cleanedText);
-
-    return res.json({
-      distrito,
-      horario_analise: timeString,
-      data_analise: dateString,
-      fonte: `Análise Inteligente (${result.model})`,
-      ...data
-    });
-
-  } catch (error) {
-    console.log("Aviso: Falha temporária na API do Gemini. Ativando modelo de contingência local.", error?.toString() || error);
-    // Graceful fallback is always present to offer pristine service stability
-    const fallbackData = getHistoricalFallbackData(distrito);
-    return res.json({
-      distrito,
-      horario_analise: timeString,
-      data_analise: dateString,
-      erro_api: true,
-      fonte: "Previsão de Contingência Local",
-      ...fallbackData
-    });
-  }
-  */
 });
 
 // Serve frontend assets

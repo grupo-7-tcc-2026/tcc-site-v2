@@ -1,6 +1,5 @@
 {
   "name": "Previsão de Alagamentos SP",
-  "description": "Painel climático com dados locais simulados de risco de alagamento por distritos de São Paulo.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
+  "description": "Painel climático inteligente com monitoramento de risco de alagamento por distritos de São Paulo utilizando Inteligência Artificial.",
+  "requestFramePermissions": []
 }
